@@ -1,2 +1,1 @@
-# react-redux-itunes-search
-
+# react-redux-themoviedb-search
