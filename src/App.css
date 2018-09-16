@@ -1,28 +1,42 @@
-.App {
-  text-align: center;
-}
+@import '~antd/dist/antd.css';
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.App {
+	text-align: center;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+	background-color: #222;
+	height: 60px;
+	padding: 5px;
+	margin: 10px;
+	border-radius: 8px;
 }
 
 .App-title {
-  font-size: 1.5em;
+	font-size: 2.4em;
+	color: white;
 }
 
-.App-intro {
-  font-size: large;
+.App-body {
+	margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media (max-width: 650px) {
+	.App-header {
+		height: 45px;
+	}
+
+	.App-title {
+		font-size: 1.7em;
+	}
+}
+
+@media (max-width: 468px) {
+	.App-header {
+		height: 40px;
+	}
+
+	.App-title {
+		font-size: 1.4em;
+	}
 }

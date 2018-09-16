@@ -20,7 +20,7 @@
 	"scripts": {
 		"start": "REACT_APP_ENVIROMENT=development react-scripts start",
 		"build": "REACT_APP_ENVIROMENT=development react-scripts build",
-		"test": "REACT_APP_ENVIROMENT=development react-scripts test --env=jsdom",
+		"test": "REACT_APP_ENVIROMENT=testing react-scripts test --env=jsdom",
 		"preproduction": "REACT_APP_ENVIROMENT=preproduction react-scripts build",
 		"production": "REACT_APP_ENVIROMENT=production react-scripts build",
 		"prettier": "prettier --config .prettierrc --write '{src,__{tests,mocks}__}/**/*.js'",
