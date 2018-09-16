@@ -3,7 +3,7 @@
 const axios = {
 	get: url => {
 		return new Promise((resolve, reject) => {
-			process.nextTick(() => resolve({ data: { results: [] } }));
+			process.nextTick(() => resolve({}));
 		});
 	},
 };

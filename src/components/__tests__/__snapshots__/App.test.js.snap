@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component Snapshot matchs 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    <h1
+      className="App-title"
+    >
+      The Movie Database API
+    </h1>
+  </header>
+  <div
+    className="App-body"
+  >
+    <div>
+      <mocked
+        name="Search"
+        props={
+          Object {
+            "history": Object {
+              "action": "POP",
+              "block": [Function],
+              "createHref": [Function],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            },
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "match": Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            },
+            "staticContext": undefined,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
