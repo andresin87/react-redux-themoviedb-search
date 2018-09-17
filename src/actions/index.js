@@ -31,68 +31,68 @@ const URL_DEFAULT_INCLUDE_ADULT = 'false';
 const URL_API_KEY = '6b396f8d9c44ac98a337ebc84dcda077';
 
 export const fetchPopular = () => {
-	const url = `${URL_API_THEMOVIEDB}/movie/popular?page=${URL_DEFAULT_PAGE}&language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
-	const meta = {};
-	return doFetch(POPULAR_FETCH, url, meta);
+  const url = `${URL_API_THEMOVIEDB}/movie/popular?page=${URL_DEFAULT_PAGE}&language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
+  const meta = {};
+  return doFetch(POPULAR_FETCH, url, meta);
 };
 
 export const fetchSearch = query => {
-	if (!query) return { type: SEARCH_FETCH_FAILURE };
-	const url = `${URL_API_THEMOVIEDB}/search/movie?include_adult=${URL_DEFAULT_INCLUDE_ADULT}&page=${URL_DEFAULT_PAGE}&language=${URL_DEFAULT_LANGUAGE}&query=${query}&api_key=${URL_API_KEY}`;
-	const meta = { query };
-	return doFetch(SEARCH_FETCH, url, meta);
+  if (!query) return { type: SEARCH_FETCH_FAILURE };
+  const url = `${URL_API_THEMOVIEDB}/search/movie?include_adult=${URL_DEFAULT_INCLUDE_ADULT}&page=${URL_DEFAULT_PAGE}&language=${URL_DEFAULT_LANGUAGE}&query=${query}&api_key=${URL_API_KEY}`;
+  const meta = { query };
+  return doFetch(SEARCH_FETCH, url, meta);
 };
 
 export const fetchSearchById = id => {
-	if (!id) return { type: DETAIL_FETCH_FAILURE };
-	const url = `${URL_API_THEMOVIEDB}/movie/${id}?language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
-	const meta = { id };
-	return doFetch(DETAIL_FETCH, url, meta);
+  if (!id) return { type: DETAIL_FETCH_FAILURE };
+  const url = `${URL_API_THEMOVIEDB}/movie/${id}?language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
+  const meta = { id };
+  return doFetch(DETAIL_FETCH, url, meta);
 };
 
 export const fetchGenres = () => {
-	const url = `${URL_API_THEMOVIEDB}/genre/movie/list?language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
-	const meta = {};
-	return doFetch(GENRES_FETCH, url, meta);
+  const url = `${URL_API_THEMOVIEDB}/genre/movie/list?language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
+  const meta = {};
+  return doFetch(GENRES_FETCH, url, meta);
 };
 
 /*
  * Extracted from: https://github.com/reactjs/redux/issues/1676
  ***/
 export const doFetch = (type, url, meta = {}) => {
-	// Redux Thunk will inject dispatch here:
-	return dispatch => {
-		// Reducers may handle this to set a flag like isFetching
-		dispatch({
-			type: type + '/REQUEST',
-			payload: {
-				meta,
-			},
-		});
+  // Redux Thunk will inject dispatch here:
+  return dispatch => {
+    // Reducers may handle this to set a flag like isFetching
+    dispatch({
+      type: type + '/REQUEST',
+      payload: {
+        meta,
+      },
+    });
 
-		//The response function
-		const theResponse = response => {
-			dispatch({
-				type: type + '/SUCCESS',
-				payload: {
-					response,
-					meta,
-				},
-			});
-		};
+    //The response function
+    const theResponse = response => {
+      dispatch({
+        type: type + '/SUCCESS',
+        payload: {
+          response,
+          meta,
+        },
+      });
+    };
 
-		//The error function
-		const theError = error => {
-			dispatch({
-				type: type + '/FAILURE',
-				payload: {
-					error,
-					meta,
-				},
-			});
-		};
+    //The error function
+    const theError = error => {
+      dispatch({
+        type: type + '/FAILURE',
+        payload: {
+          error,
+          meta,
+        },
+      });
+    };
 
-		// Perform the actual API call
-		return axios.get(url).then(theResponse, theError);
-	};
+    // Perform the actual API call
+    return axios.get(url).then(theResponse, theError);
+  };
 };

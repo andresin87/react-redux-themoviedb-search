@@ -6,20 +6,20 @@ import { mockComponent } from '../../utils/testUtils';
 import App from '../App';
 
 jest.mock('../Search', () => {
-	return props => mockComponent('Search', props);
+  return props => mockComponent('Search', props);
 });
 
 describe('App component', () => {
-	const component = <App />;
+  const component = <App />;
 
-	it('Renders without crashing', () => {
-		const div = document.createElement('div');
-		ReactDOM.render(component, div);
-		ReactDOM.unmountComponentAtNode(div);
-	});
+  it('Renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(component, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
 
-	it('Snapshot matchs', () => {
-		const tree = renderer.create(<App />).toJSON();
-		expect(tree).toMatchSnapshot();
-	});
+  it('Snapshot matchs', () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

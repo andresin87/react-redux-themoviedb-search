@@ -10,25 +10,25 @@ import Detail from './Detail';
 const store = configureStore();
 
 class App extends Component {
-	render() {
-		return (
-			<Provider store={store}>
-				<div className="App">
-					<header className="App-header">
-						<h1 className="App-title">The Movie Database API</h1>
-					</header>
-					<div className="App-body">
-						<Router>
-							<div>
-								<Route exact path="/" component={Search} />
-								<Route path="/detail" component={Detail} />
-							</div>
-						</Router>
-					</div>
-				</div>
-			</Provider>
-		);
-	}
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">The Movie Database API</h1>
+          </header>
+          <div className="App-body">
+            <Router>
+              <div>
+                <Route exact path="/" component={Search} />
+                <Route path="/detail" component={Detail} />
+              </div>
+            </Router>
+          </div>
+        </div>
+      </Provider>
+    );
+  }
 }
 
 export default App;

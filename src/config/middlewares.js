@@ -7,7 +7,7 @@ import freeze from 'redux-freeze';
 const DEFAULT_ENVIROMENT = 'development';
 let enviroment = DEFAULT_ENVIROMENT;
 if (process && process.env && process.env.REACT_APP_ENVIROMENT) {
-	enviroment = process.env.REACT_APP_ENVIROMENT;
+  enviroment = process.env.REACT_APP_ENVIROMENT;
 }
 
 /*
@@ -17,17 +17,17 @@ if (process && process.env && process.env.REACT_APP_ENVIROMENT) {
  * - Redux Thunk
  ***/
 const getMiddlewaresThunkFreezeLoggerReactDevTools = () => {
-	const composeEnhancers =
-		process.env.NODE_ENV !== 'production' &&
-		typeof window === 'object' &&
-		window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-			? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
-			: compose;
+  const composeEnhancers =
+    process.env.NODE_ENV !== 'production' &&
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+      ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+      : compose;
 
-	const enhancer = composeEnhancers(
-		applyMiddleware(thunk, freeze, createLogger())
-	);
-	return enhancer;
+  const enhancer = composeEnhancers(
+    applyMiddleware(thunk, freeze, createLogger())
+  );
+  return enhancer;
 };
 
 /*
@@ -36,7 +36,7 @@ const getMiddlewaresThunkFreezeLoggerReactDevTools = () => {
  * - Redux Thunk
  ***/
 const getMiddlewaresThunkLogger = () => {
-	return applyMiddleware(thunk, createLogger());
+  return applyMiddleware(thunk, createLogger());
 };
 
 /*
@@ -44,22 +44,22 @@ const getMiddlewaresThunkLogger = () => {
  * - Redux Thunk
  ***/
 const getMiddlewaresThunk = () => {
-	return applyMiddleware(thunk);
+  return applyMiddleware(thunk);
 };
 
 /*
  * Returns the collection of middlewares
  ***/
 const getMiddlewares = () => {
-	switch (enviroment) {
-		case 'development':
-			return getMiddlewaresThunkFreezeLoggerReactDevTools();
-		case 'preproduction':
-			return getMiddlewaresThunkLogger();
-		case 'testing':
-		default:
-			return getMiddlewaresThunk();
-	}
+  switch (enviroment) {
+    case 'development':
+      return getMiddlewaresThunkFreezeLoggerReactDevTools();
+    case 'preproduction':
+      return getMiddlewaresThunkLogger();
+    case 'testing':
+    default:
+      return getMiddlewaresThunk();
+  }
 };
 
 export default getMiddlewares;

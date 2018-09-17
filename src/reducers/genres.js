@@ -1,39 +1,39 @@
 import {
-	GENRES_FETCH_REQUEST,
-	GENRES_FETCH_SUCCESS,
-	GENRES_FETCH_FAILURE,
+  GENRES_FETCH_REQUEST,
+  GENRES_FETCH_SUCCESS,
+  GENRES_FETCH_FAILURE,
 } from '../actions';
 
 const defaultState = {
-	isLoading: false,
-	names: {},
+  isLoading: false,
+  names: {},
 };
 
 const normalizeGenres = genresAsArray => {
-	const genres = {};
-	if (!genresAsArray) return genres;
-	genresAsArray.forEach(gender => {
-		const { id, name } = gender;
-		genres[id] = name;
-	});
-	return genres;
+  const genres = {};
+  if (!genresAsArray) return genres;
+  genresAsArray.forEach(gender => {
+    const { id, name } = gender;
+    genres[id] = name;
+  });
+  return genres;
 };
 
 export default function(state = defaultState, action) {
-	switch (action.type) {
-		case GENRES_FETCH_REQUEST:
-			return { ...defaultState, isLoading: true };
+  switch (action.type) {
+    case GENRES_FETCH_REQUEST:
+      return { ...defaultState, isLoading: true };
 
-		case GENRES_FETCH_SUCCESS: {
-			if (!action.payload.response.data) return defaultState;
-			const { genres } = action.payload.response.data;
-			return { names: normalizeGenres(genres), isLoading: false };
-		}
+    case GENRES_FETCH_SUCCESS: {
+      if (!action.payload.response.data) return defaultState;
+      const { genres } = action.payload.response.data;
+      return { names: normalizeGenres(genres), isLoading: false };
+    }
 
-		case GENRES_FETCH_FAILURE:
-			return { ...defaultState };
+    case GENRES_FETCH_FAILURE:
+      return { ...defaultState };
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 }
