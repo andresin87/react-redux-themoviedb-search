@@ -12,7 +12,7 @@ const defaultState = {
 export default function(state = defaultState, action) {
 	switch (action.type) {
 		case DETAIL_FETCH_REQUEST:
-			return { ...state, isLoading: true };
+			return { ...defaultState, isLoading: true };
 
 		case DETAIL_FETCH_SUCCESS: {
 			const { data } = action.payload.response;

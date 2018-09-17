@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { mockComponent } from '../../../utils/testUtils';
 
 import Search from '../Search';
 import store from '../../../config/mockStore';
-
-import { fetchPopular } from '../../../actions';
+import { fetchPopular, fetchGenres } from '../../../actions';
 
 jest.mock('../../../actions');
+jest.mock('../SearchBar', () => {
+	return props => mockComponent('SearchBar', props);
+});
 
 describe('Search component', () => {
 	const initialEntries = ['/'];
@@ -23,6 +26,7 @@ describe('Search component', () => {
 
 	beforeEach(() => {
 		fetchPopular.mockReturnValue({ type: 'fetchPopular' });
+		fetchGenres.mockReturnValue({ type: 'fetchGenres' });
 	});
 
 	afterEach(() => {
@@ -45,5 +49,12 @@ describe('Search component', () => {
 		ReactDOM.render(component, div);
 		expect(fetchPopular).toHaveBeenCalledTimes(1);
 		expect(fetchPopular).toHaveBeenCalledWith();
+	});
+
+	it('Calls to fetchGenres on load', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(component, div);
+		expect(fetchGenres).toHaveBeenCalledTimes(1);
+		expect(fetchGenres).toHaveBeenCalledWith();
 	});
 });

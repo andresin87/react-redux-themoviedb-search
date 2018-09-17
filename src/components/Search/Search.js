@@ -1,17 +1,24 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchPopular, fetchSearch } from '../../actions';
+import SearchBar from './SearchBar';
+import { fetchPopular, fetchSearch, fetchGenres } from '../../actions';
 
 class Search extends PureComponent {
 	componentDidMount() {
-		const { fetchPopular } = this.props;
+		const { fetchPopular, fetchGenres } = this.props;
 		fetchPopular();
+		fetchGenres();
 	}
 	render() {
 		const { search } = this.props;
 		return (
-			<pre style={{ textAlign: 'left' }}>{JSON.stringify(search, null, 2)}</pre>
+			<Fragment>
+				<SearchBar />
+				<pre style={{ textAlign: 'left' }}>
+					{JSON.stringify(search, null, 2)}
+				</pre>
+			</Fragment>
 		);
 	}
 }
@@ -23,5 +30,5 @@ const mapStateToProps = state => {
 
 export default connect(
 	mapStateToProps,
-	{ fetchPopular, fetchSearch }
+	{ fetchPopular, fetchSearch, fetchGenres }
 )(Search);

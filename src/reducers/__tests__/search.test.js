@@ -30,6 +30,21 @@ describe('Search Reducer', () => {
 		expect(reducer(initialState, action)).toEqual(expectedState);
 	});
 
+	it('Action: POPULAR_FETCH_REQUEST', () => {
+		const action = {
+			type: POPULAR_FETCH_REQUEST,
+		};
+		const initialState = {
+			isLoading: false,
+			movies: [],
+		};
+		const expectedState = {
+			isLoading: true,
+			movies: [],
+		};
+		expect(reducer(initialState, action)).toEqual(expectedState);
+	});
+
 	it('Action: POPULAR_FETCH_SUCCESS', () => {
 		const action = {
 			type: POPULAR_FETCH_SUCCESS,
@@ -52,21 +67,6 @@ describe('Search Reducer', () => {
 		expect(reducer(initialState, action)).toEqual(expectedState);
 	});
 
-	it('Action: POPULAR_FETCH_REQUEST', () => {
-		const action = {
-			type: POPULAR_FETCH_REQUEST,
-		};
-		const initialState = {
-			isLoading: false,
-			movies: [],
-		};
-		const expectedState = {
-			isLoading: true,
-			movies: [],
-		};
-		expect(reducer(initialState, action)).toEqual(expectedState);
-	});
-
 	it('Action: POPULAR_FETCH_FAILURE', () => {
 		const action = {
 			type: POPULAR_FETCH_FAILURE,
@@ -77,6 +77,21 @@ describe('Search Reducer', () => {
 		};
 		const expectedState = {
 			isLoading: false,
+			movies: [],
+		};
+		expect(reducer(initialState, action)).toEqual(expectedState);
+	});
+
+	it('Action: SEARCH_FETCH_REQUEST', () => {
+		const action = {
+			type: SEARCH_FETCH_REQUEST,
+		};
+		const initialState = {
+			isLoading: false,
+			movies: [],
+		};
+		const expectedState = {
+			isLoading: true,
 			movies: [],
 		};
 		expect(reducer(initialState, action)).toEqual(expectedState);
@@ -100,21 +115,6 @@ describe('Search Reducer', () => {
 		const expectedState = {
 			isLoading: false,
 			movies,
-		};
-		expect(reducer(initialState, action)).toEqual(expectedState);
-	});
-
-	it('Action: SEARCH_FETCH_REQUEST', () => {
-		const action = {
-			type: SEARCH_FETCH_REQUEST,
-		};
-		const initialState = {
-			isLoading: false,
-			movies: [],
-		};
-		const expectedState = {
-			isLoading: true,
-			movies: [],
 		};
 		expect(reducer(initialState, action)).toEqual(expectedState);
 	});

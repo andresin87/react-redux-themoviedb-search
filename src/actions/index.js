@@ -18,6 +18,12 @@ export const DETAIL_FETCH_REQUEST = 'DETAIL@FETCH/REQUEST';
 export const DETAIL_FETCH_SUCCESS = 'DETAIL@FETCH/SUCCESS';
 export const DETAIL_FETCH_FAILURE = 'DETAIL@FETCH/FAILURE';
 
+// Search by term
+export const GENRES_FETCH = 'GENRES@FETCH';
+export const GENRES_FETCH_REQUEST = 'GENRES@FETCH/REQUEST';
+export const GENRES_FETCH_SUCCESS = 'GENRES@FETCH/SUCCESS';
+export const GENRES_FETCH_FAILURE = 'GENRES@FETCH/FAILURE';
+
 const URL_API_THEMOVIEDB = 'https://api.themoviedb.org/3';
 const URL_DEFAULT_PAGE = 1;
 const URL_DEFAULT_LANGUAGE = 'en-US';
@@ -42,6 +48,12 @@ export const fetchSearchById = id => {
 	const url = `${URL_API_THEMOVIEDB}/movie/${id}?language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
 	const meta = { id };
 	return doFetch(DETAIL_FETCH, url, meta);
+};
+
+export const fetchGenres = () => {
+	const url = `${URL_API_THEMOVIEDB}/genre/movie/list?language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
+	const meta = {};
+	return doFetch(GENRES_FETCH, url, meta);
 };
 
 /*

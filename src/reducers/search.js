@@ -16,7 +16,7 @@ export default function(state = defaultState, action) {
 	switch (action.type) {
 		case POPULAR_FETCH_REQUEST:
 		case SEARCH_FETCH_REQUEST:
-			return { ...state, isLoading: true };
+			return { ...defaultState, isLoading: true };
 
 		case POPULAR_FETCH_SUCCESS:
 		case SEARCH_FETCH_SUCCESS: {

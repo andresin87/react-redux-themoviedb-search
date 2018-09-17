@@ -18,6 +18,21 @@ describe('Detail Reducer', () => {
 		expect(reducer(initialState, action)).toEqual(expectedState);
 	});
 
+	it('Action: DETAIL_FETCH_REQUEST', () => {
+		const action = {
+			type: DETAIL_FETCH_REQUEST,
+		};
+		const initialState = {
+			isLoading: false,
+			movie: {},
+		};
+		const expectedState = {
+			isLoading: true,
+			movie: {},
+		};
+		expect(reducer(initialState, action)).toEqual(expectedState);
+	});
+
 	it('Action: DETAIL_FETCH_SUCCESS', () => {
 		const action = {
 			type: DETAIL_FETCH_SUCCESS,
@@ -34,21 +49,6 @@ describe('Detail Reducer', () => {
 		const expectedState = {
 			isLoading: false,
 			movie: movieInformation,
-		};
-		expect(reducer(initialState, action)).toEqual(expectedState);
-	});
-
-	it('Action: DETAIL_FETCH_REQUEST', () => {
-		const action = {
-			type: DETAIL_FETCH_REQUEST,
-		};
-		const initialState = {
-			isLoading: false,
-			movie: {},
-		};
-		const expectedState = {
-			isLoading: true,
-			movie: {},
 		};
 		expect(reducer(initialState, action)).toEqual(expectedState);
 	});
