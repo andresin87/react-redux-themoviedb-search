@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import { fetchSearchById } from '../../actions';
+import { selectorDetail } from '../../reducers/detail';
 
 class Detail extends PureComponent {
   componentDidMount() {
@@ -20,8 +21,7 @@ class Detail extends PureComponent {
 }
 
 const mapStateToProps = state => {
-  const { detail } = state;
-  return { detail };
+  return { detail: selectorDetail(state) };
 };
 
 export default connect(

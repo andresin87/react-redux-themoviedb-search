@@ -3,7 +3,7 @@ import {
   GENRES_FETCH_SUCCESS,
   GENRES_FETCH_FAILURE,
 } from '../../actions';
-import reducer from '../genres';
+import reducer, { selectorGenres } from '../genres';
 
 describe('Genres Reducer', () => {
   const genresAsArray = [
@@ -86,5 +86,13 @@ describe('Genres Reducer', () => {
       names: {},
     };
     expect(reducer(initialState, action)).toEqual(expectedState);
+  });
+
+  it('Selector: selectorGenres', () => {
+    const genres = { a: 1, b: 2 };
+    const state = {
+      genres,
+    };
+    expect(selectorGenres(state)).toEqual(genres);
   });
 });

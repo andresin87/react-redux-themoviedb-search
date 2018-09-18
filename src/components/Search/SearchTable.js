@@ -5,6 +5,8 @@ import { Table } from 'antd';
 import moment from 'moment';
 
 import './SearchTable.css';
+import { selectorSearch } from '../../reducers/search';
+import { selectorGenres } from '../../reducers/genres';
 
 const sort = (itemA, itemB) => {
   if (itemA > itemB) return 1;
@@ -25,7 +27,7 @@ class SearchTable extends PureComponent {
   }
 
   getColumns = () => {
-    const { genres } = this.props;
+    const { genresNames } = this.props;
     const columns = [
       {
         title: 'Title',
@@ -79,8 +81,8 @@ class SearchTable extends PureComponent {
         render: ids =>
           ids
             .reduce((genresAsString, idGenre) => {
-              return genres && genres[idGenre]
-                ? `${genresAsString} ${genres[idGenre]},`
+              return genresNames && genresNames[idGenre]
+                ? `${genresAsString} ${genresNames[idGenre]},`
                 : '';
             }, '')
             .slice(0, -1),
@@ -113,11 +115,15 @@ class SearchTable extends PureComponent {
 }
 
 const mapStateToProps = state => {
+  const { movies, isLoading: isLoadingMovies } = selectorSearch(state);
+  const { names: genresNames, isLoading: isLoadingGenres } = selectorGenres(
+    state
+  );
   return {
-    isLoadingMovies: state.search.isLoading,
-    movies: state.search.movies,
-    isLoadingGenres: state.genres.isLoading,
-    genres: state.genres.names,
+    movies,
+    isLoadingMovies,
+    genresNames,
+    isLoadingGenres,
   };
 };
 

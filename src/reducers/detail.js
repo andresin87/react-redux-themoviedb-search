@@ -33,3 +33,5 @@ export default function(state = defaultState, action) {
       return state;
   }
 }
+
+export const selectorDetail = state => state.detail;
