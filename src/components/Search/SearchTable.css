@@ -1,0 +1,35 @@
+.SearchTable {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+@media (max-width: 1400px) {
+  .SearchTableGenres {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .SearchTableReleaseDate {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .SearchTablePopularity {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .SearchTableVoteCount {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .SearchTableVoteAverage {
+    display: none;
+  }
+}

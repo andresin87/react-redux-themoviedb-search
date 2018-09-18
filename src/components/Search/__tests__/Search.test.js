@@ -13,6 +13,9 @@ jest.mock('../../../actions');
 jest.mock('../SearchBar', () => {
   return props => mockComponent('SearchBar', props);
 });
+jest.mock('../SearchTable', () => {
+  return props => mockComponent('SearchTable', props);
+});
 
 describe('Search component', () => {
   const initialEntries = ['/'];
