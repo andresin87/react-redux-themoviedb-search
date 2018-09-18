@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar component Snapshot matchs 1`] = `
+<div
+  className="SearchBar"
+>
+  <mocked
+    name="Antd Search"
+    props={
+      Object {
+        "enterButton": "Search",
+        "onSearch": [Function],
+        "placeholder": "Search for a film...",
+        "size": "large",
+      }
+    }
+  />
+</div>
+`;
