@@ -1,0 +1,47 @@
+.Detail {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'DetailPosterWrapper DetailInfoWrapper';
+}
+
+.DetailPosterWrapper {
+  grid-area: DetailPosterWrapper;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.DetailInfoWrapper {
+  grid-area: DetailInfoWrapper;
+  text-align: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  max-width: 650px;
+}
+
+@media (max-width: 1050px) {
+  .Detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      'DetailPosterWrapper'
+      'DetailInfoWrapper';
+  }
+
+  .DetailPosterWrapper {
+    text-align: center;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+
+  .DetailInfoWrapper {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 550px) {
+  .DetailPosterWrapper {
+    display: none;
+  }
+}

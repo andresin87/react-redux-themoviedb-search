@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
+import './Detail.css';
 import { fetchSearchById } from '../../actions';
-import { selectorDetail } from '../../reducers/detail';
+import DetailPoster from './DetailPoster';
+import DetailInfo from './DetailInfo';
 
 class Detail extends PureComponent {
   componentDidMount() {
@@ -13,18 +15,20 @@ class Detail extends PureComponent {
     }
   }
   render() {
-    const { detail } = this.props;
     return (
-      <pre style={{ textAlign: 'left' }}>{JSON.stringify(detail, null, 2)}</pre>
+      <div className="Detail">
+        <div className="DetailPosterWrapper">
+          <DetailPoster />
+        </div>
+        <div className="DetailInfoWrapper">
+          <DetailInfo />
+        </div>
+      </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return { detail: selectorDetail(state) };
-};
-
 export default connect(
-  mapStateToProps,
+  null,
   { fetchSearchById }
 )(Detail);
