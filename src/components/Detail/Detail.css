@@ -23,25 +23,24 @@
   .Detail {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50% 50%;
-    grid-template-areas:
-      'DetailPosterWrapper'
-      'DetailInfoWrapper';
-  }
-
-  .DetailPosterWrapper {
-    text-align: center;
-    margin-right: 0px;
-    margin-bottom: 15px;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'DetailInfoWrapper';
   }
 
   .DetailInfoWrapper {
-    margin-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 100%;
+  }
+
+  .DetailPosterWrapper {
+    display: none;
   }
 }
 
-@media (max-width: 550px) {
-  .DetailPosterWrapper {
-    display: none;
+@media (max-width: 650px) {
+  .DetailInfoWrapper {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
