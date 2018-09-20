@@ -22,7 +22,7 @@ exports[`Detail component Snapshot matchs 1`] = `
   >
     <a
       aria-current="page"
-      className="DetailInfoHomeButton"
+      className="DetailInfoHomeButton active"
       href="/"
       onClick={[Function]}
       style={

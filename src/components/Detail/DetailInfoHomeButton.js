@@ -8,7 +8,7 @@ class DetailInfoHomeButton extends PureComponent {
     return (
       <NavLink
         to="/"
-        activeClassName="DetailInfoHomeButton"
+        className="DetailInfoHomeButton"
         style={{ color: 'white' }}
       >
         Home
