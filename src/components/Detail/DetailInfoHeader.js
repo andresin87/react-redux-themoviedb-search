@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 class DetailInfoHeader extends PureComponent {
   getTagline = tagline => {
@@ -25,5 +26,10 @@ class DetailInfoHeader extends PureComponent {
     );
   }
 }
+
+DetailInfoHeader.propTypes = {
+  title: PropTypes.string,
+  tagline: PropTypes.string,
+};
 
 export default DetailInfoHeader;

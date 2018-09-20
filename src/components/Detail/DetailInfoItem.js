@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { List } from 'antd';
 
 class DetailInfoItem extends PureComponent {
@@ -53,5 +54,19 @@ class DetailInfoItem extends PureComponent {
     );
   }
 }
+
+DetailInfoItem.propTypes = {
+  key: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.oneOf([
+    'currency',
+    'array',
+    'text',
+    'number',
+    'date',
+    'time',
+  ]),
+  value: PropTypes.string,
+};
 
 export default DetailInfoItem;

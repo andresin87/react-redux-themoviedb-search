@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Input } from 'antd';
 
@@ -22,6 +23,10 @@ class SearchBar extends PureComponent {
     );
   }
 }
+
+SearchBar.propTypes = {
+  fetchSearch: PropTypes.func.isRequired,
+};
 
 export default connect(
   null,

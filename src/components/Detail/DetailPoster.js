@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { selectorDetail } from '../../reducers/detail';
@@ -20,6 +21,10 @@ class DetailPoster extends PureComponent {
     );
   }
 }
+
+DetailPoster.propTypes = {
+  detail: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => {
   return { detail: selectorDetail(state) };

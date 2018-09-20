@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import SearchBar from './SearchBar';
@@ -20,6 +21,11 @@ class Search extends PureComponent {
     );
   }
 }
+
+Search.propTypes = {
+  fetchPopular: PropTypes.func.isRequired,
+  fetchGenres: PropTypes.func.isRequired,
+};
 
 export default connect(
   null,

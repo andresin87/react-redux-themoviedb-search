@@ -114,6 +114,13 @@ class SearchTable extends PureComponent {
   }
 }
 
+SearchTable.propTypes = {
+  movies: PropTypes.array.isRequired,
+  isLoadingMovies: PropTypes.bool.isRequired,
+  genresNames: PropTypes.object.isRequired,
+  isLoadingGenres: PropTypes.bool.isRequired,
+};
+
 const mapStateToProps = state => {
   const { movies, isLoading: isLoadingMovies } = selectorSearch(state);
   const { names: genresNames, isLoading: isLoadingGenres } = selectorGenres(

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { List } from 'antd';
 
@@ -123,6 +124,10 @@ class DetailInfo extends PureComponent {
     );
   }
 }
+
+DetailInfo.propTypes = {
+  detail: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => {
   return { detail: selectorDetail(state) };
