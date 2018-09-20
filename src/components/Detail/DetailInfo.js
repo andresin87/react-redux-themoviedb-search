@@ -109,7 +109,7 @@ class DetailInfo extends PureComponent {
   render() {
     const {
       detail: {
-        movie: { tagline, title, vote_average },
+        movie: { tagline, title },
       },
     } = this.props;
     const dataSource = this.getDataSource();
