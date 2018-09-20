@@ -7,12 +7,6 @@ exports[`DetailInfo component Snapshot matchs 1`] = `
     Object {
       "dataSource": Array [
         Object {
-          "key": "budget",
-          "label": "Budget",
-          "type": "currency",
-          "value": 63000000,
-        },
-        Object {
           "key": "genres",
           "label": "Genres",
           "type": "array",
@@ -30,10 +24,39 @@ exports[`DetailInfo component Snapshot matchs 1`] = `
           "value": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \\"fight clubs\\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
         },
         Object {
-          "key": "popularity",
-          "label": "Popularity",
-          "type": "number",
-          "value": 33.335,
+          "key": "status",
+          "label": "Status",
+          "type": "text",
+          "value": "Released",
+        },
+        Object {
+          "key": "release_date",
+          "label": "Release date",
+          "type": "date",
+          "value": "1999-10-15",
+        },
+        Object {
+          "key": "runtime",
+          "label": "Runtime",
+          "type": "time",
+          "value": 139,
+        },
+        Object {
+          "key": "spoken_languages",
+          "label": "Spoken languages",
+          "type": "array",
+          "value": Array [
+            Object {
+              "iso_639_1": "en",
+              "name": "English",
+            },
+          ],
+        },
+        Object {
+          "key": "budget",
+          "label": "Budget",
+          "type": "currency",
+          "value": 63000000,
         },
         Object {
           "key": "production_companies",
@@ -100,33 +123,10 @@ exports[`DetailInfo component Snapshot matchs 1`] = `
           ],
         },
         Object {
-          "key": "release_date",
-          "label": "Release date",
-          "type": "date",
-          "value": "1999-10-15",
-        },
-        Object {
-          "key": "runtime",
-          "label": "Runtime",
-          "type": "time",
-          "value": 139,
-        },
-        Object {
-          "key": "spoken_languages",
-          "label": "Spoken languages",
-          "type": "array",
-          "value": Array [
-            Object {
-              "iso_639_1": "en",
-              "name": "English",
-            },
-          ],
-        },
-        Object {
-          "key": "status",
-          "label": "Status",
-          "type": "text",
-          "value": "Released",
+          "key": "popularity",
+          "label": "Popularity",
+          "type": "number",
+          "value": 33.335,
         },
         Object {
           "key": "vote_average",

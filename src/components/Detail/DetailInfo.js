@@ -30,12 +30,6 @@ class DetailInfo extends PureComponent {
 
     const dataSource = [
       {
-        key: 'budget',
-        label: 'Budget',
-        type: 'currency',
-        value: budget,
-      },
-      {
         key: 'genres',
         label: 'Genres',
         type: 'array',
@@ -48,22 +42,10 @@ class DetailInfo extends PureComponent {
         value: overview,
       },
       {
-        key: 'popularity',
-        label: 'Popularity',
-        type: 'number',
-        value: popularity,
-      },
-      {
-        key: 'production_companies',
-        label: 'Prod. companies',
-        type: 'array',
-        value: production_companies,
-      },
-      {
-        key: 'production_countries',
-        label: 'Prod. countries',
-        type: 'array',
-        value: production_countries,
+        key: 'status',
+        label: 'Status',
+        type: 'text',
+        value: status,
       },
       {
         key: 'release_date',
@@ -84,10 +66,28 @@ class DetailInfo extends PureComponent {
         value: spoken_languages,
       },
       {
-        key: 'status',
-        label: 'Status',
-        type: 'text',
-        value: status,
+        key: 'budget',
+        label: 'Budget',
+        type: 'currency',
+        value: budget,
+      },
+      {
+        key: 'production_companies',
+        label: 'Prod. companies',
+        type: 'array',
+        value: production_companies,
+      },
+      {
+        key: 'production_countries',
+        label: 'Prod. countries',
+        type: 'array',
+        value: production_countries,
+      },
+      {
+        key: 'popularity',
+        label: 'Popularity',
+        type: 'number',
+        value: popularity,
       },
       {
         key: 'vote_average',
@@ -109,7 +109,7 @@ class DetailInfo extends PureComponent {
   render() {
     const {
       detail: {
-        movie: { tagline, title },
+        movie: { tagline, title, vote_average },
       },
     } = this.props;
     const dataSource = this.getDataSource();
