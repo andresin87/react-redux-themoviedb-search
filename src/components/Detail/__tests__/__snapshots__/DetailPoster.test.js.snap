@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailPoster component Snapshot matchs 1`] = `
+<img
+  alt="Fight Club"
+  src="https://image.tmdb.org/t/p/w500/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg"
+  style={
+    Object {
+      "width": 500,
+    }
+  }
+/>
+`;

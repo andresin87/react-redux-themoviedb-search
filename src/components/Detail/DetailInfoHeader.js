@@ -1,6 +1,18 @@
 import React, { PureComponent, Fragment } from 'react';
 
 class DetailInfoHeader extends PureComponent {
+  getTagline = tagline => {
+    if (!tagline || tagline === '') return null;
+    else {
+      return (
+        <h4 style={{ marginLeft: '10px', fontStyle: 'oblique' }}>
+          {' '}
+          — {tagline}
+        </h4>
+      );
+    }
+  };
+
   render() {
     const { title, tagline } = this.props;
     return (
@@ -8,10 +20,7 @@ class DetailInfoHeader extends PureComponent {
         <h2>
           <strong>{title}</strong>
         </h2>
-        <h4 style={{ marginLeft: '10px', fontStyle: 'oblique' }}>
-          {' '}
-          — {tagline}
-        </h4>
+        {this.getTagline(tagline)}
       </Fragment>
     );
   }

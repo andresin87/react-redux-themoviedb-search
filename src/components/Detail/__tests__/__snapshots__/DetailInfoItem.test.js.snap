@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item budget 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Budget
+    : 
+  </strong>
+  63,000,000$
+</mocked>
+`;
+
+exports[`Item genres 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Genres
+    : 
+  </strong>
+   Drama
+</mocked>
+`;
+
+exports[`Item overview 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Overview
+    : 
+  </strong>
+  A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.
+</mocked>
+`;
+
+exports[`Item popularity 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Popularity
+    : 
+  </strong>
+  38.513
+</mocked>
+`;
+
+exports[`Item production_companies 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Prod. companies
+    : 
+  </strong>
+   Regency Enterprises, Fox 2000 Pictures, Taurus Film, Atman Entertainment, Knickerbocker Films, 20th Century Fox, The Linson Company
+</mocked>
+`;
+
+exports[`Item production_countries 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Prod. countries
+    : 
+  </strong>
+   Germany, United States of America
+</mocked>
+`;
+
+exports[`Item release_date 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Release date
+    : 
+  </strong>
+  15/10/1999
+</mocked>
+`;
+
+exports[`Item runtime 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Runtime
+    : 
+  </strong>
+  139 min.
+</mocked>
+`;
+
+exports[`Item spoken_languages 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Spoken languages
+    : 
+  </strong>
+   English
+</mocked>
+`;
+
+exports[`Item status 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Status
+    : 
+  </strong>
+  Released
+</mocked>
+`;
+
+exports[`Item vote_average 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Vote average
+    : 
+  </strong>
+  8.4
+</mocked>
+`;
+
+exports[`Item vote_count 1`] = `
+<mocked
+  name="ListItem"
+  props={Object {}}
+>
+  <strong
+    style={
+      Object {
+        "minWidth": "140px",
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    Vote count
+    : 
+  </strong>
+  13,653
+</mocked>
+`;

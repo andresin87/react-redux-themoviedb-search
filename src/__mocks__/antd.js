@@ -53,8 +53,16 @@ export class Icon extends Component {
   }
 }
 
+class ListItem extends Component {
+  render() {
+    return mockComponent('ListItem', this.props);
+  }
+}
+
 export class List extends Component {
   render() {
     return mockComponent('List', this.props);
   }
 }
+
+List.Item = ListItem;
