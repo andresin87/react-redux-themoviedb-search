@@ -1,10 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { List } from 'antd';
 
 import DetailInfoItem from './DetailInfoItem';
 import DetailInfoHeader from './DetailInfoHeader';
+import DetailInfoBackButton from './DetailInfoHomeButton';
 import { selectorDetail } from '../../reducers/detail';
 
 class DetailInfo extends PureComponent {
@@ -115,12 +116,15 @@ class DetailInfo extends PureComponent {
     const dataSource = this.getDataSource();
 
     return (
-      <List
-        header={<DetailInfoHeader title={title} tagline={tagline} />}
-        size="medium"
-        dataSource={dataSource}
-        renderItem={item => <DetailInfoItem>{item}</DetailInfoItem>}
-      />
+      <Fragment>
+        <DetailInfoBackButton />
+        <List
+          header={<DetailInfoHeader title={title} tagline={tagline} />}
+          size="medium"
+          dataSource={dataSource}
+          renderItem={item => <DetailInfoItem>{item}</DetailInfoItem>}
+        />
+      </Fragment>
     );
   }
 }

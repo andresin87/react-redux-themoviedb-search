@@ -20,6 +20,19 @@ exports[`Detail component Snapshot matchs 1`] = `
   <div
     className="DetailInfoWrapper"
   >
+    <a
+      aria-current="page"
+      className="DetailInfoHomeButton"
+      href="/"
+      onClick={[Function]}
+      style={
+        Object {
+          "color": "white",
+        }
+      }
+    >
+      Home
+    </a>
     <mocked
       name="List"
       props={

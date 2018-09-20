@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailInfoHomeButton component Snapshot matchs 1`] = `
+<a
+  aria-current="page"
+  className="DetailInfoHomeButton"
+  href="/"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "white",
+    }
+  }
+>
+  Home
+</a>
+`;

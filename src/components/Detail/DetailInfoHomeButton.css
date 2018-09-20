@@ -1,0 +1,17 @@
+.DetailInfoHomeButton {
+  position: absolute;
+  right: 15px;
+  top: 90px;
+  background-color: #555;
+  border-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 40px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.035);
+}

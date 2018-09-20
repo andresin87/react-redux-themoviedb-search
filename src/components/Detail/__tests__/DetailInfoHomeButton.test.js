@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import DetailInfo from '../DetailInfo';
-import store from '../../../config/mockStore';
+import DetailInfoHomeButton from '../DetailInfoHomeButton';
 
-describe('DetailInfo component', () => {
+describe('DetailInfoHomeButton component', () => {
   const component = (
-    <Provider store={store}>
-      <Router>
-        <DetailInfo />
-      </Router>
-    </Provider>
+    <Router>
+      <DetailInfoHomeButton />
+    </Router>
   );
 
   it('Renders without crashing', () => {
