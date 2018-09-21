@@ -1,47 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DetailInfoHeader component Snapshot matchs 1`] = `
-Array [
+<div
+  className="DetailInfoHeader"
+>
   <h2>
     <strong>
-        Fight Club
+      Fight Club
     </strong>
-</h2>,
+  </h2>
   <h4
-    style={
-        Object {
-            "fontStyle": "oblique",
-            "marginLeft": "10px",
-          }
-    }
->
-     
-    — 
+    className="DetailInfoHeaderTagline"
+  >
+     — 
     Mischief. Mayhem. Soap.
-</h4>,
-]
+  </h4>
+</div>
 `;
 
 exports[`DetailInfoHeader component Snapshot tagline No tagline 1`] = `
-<h2>
-  <strong>
-    Fight Club
-  </strong>
-</h2>
+<div
+  className="DetailInfoHeader"
+>
+  <h2>
+    <strong>
+      Fight Club
+    </strong>
+  </h2>
+</div>
 `;
 
 exports[`DetailInfoHeader component Snapshot tagline Tagline is empty string 1`] = `
-<h2>
-  <strong>
-    Fight Club
-  </strong>
-</h2>
+<div
+  className="DetailInfoHeader"
+>
+  <h2>
+    <strong>
+      Fight Club
+    </strong>
+  </h2>
+</div>
 `;
 
 exports[`DetailInfoHeader component Snapshot tagline Tagline is null 1`] = `
-<h2>
-  <strong>
-    Fight Club
-  </strong>
-</h2>
+<div
+  className="DetailInfoHeader"
+>
+  <h2>
+    <strong>
+      Fight Club
+    </strong>
+  </h2>
+</div>
 `;

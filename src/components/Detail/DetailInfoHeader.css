@@ -1,0 +1,50 @@
+.DetailInfoHeaderTagline {
+  margin-left: 10px;
+  font-style: 'oblique';
+}
+
+/**
+ * Resposiveness for a long name movie.
+ * For instance, The Assassination of Jesse James by the Coward Robert Ford
+ */
+@media (max-width: 1500px) {
+  .DetailInfoHeader {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .DetailInfoHeader {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .DetailInfoHeader {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .DetailInfoHeader {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 775px) {
+  .DetailInfoHeader {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 650px) {
+  .DetailInfoHeader {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 520px) {
+  .DetailInfoHeader {
+    max-width: 100%;
+  }
+}

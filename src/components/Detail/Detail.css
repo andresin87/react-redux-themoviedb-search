@@ -23,8 +23,8 @@
   .Detail {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'DetailInfoWrapper';
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 'DetailInfoWrapper' 'DetailPosterWrapper';
   }
 
   .DetailInfoWrapper {
@@ -34,12 +34,21 @@
   }
 
   .DetailPosterWrapper {
-    display: none;
+    margin-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 100%;
+    text-align: center;
   }
 }
 
 @media (max-width: 650px) {
   .DetailInfoWrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .DetailPosterWrapper {
     padding-left: 10px;
     padding-right: 10px;
   }
