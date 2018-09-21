@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import { mockComponent } from '../../../utils/testUtils';
 
 import Search from '../Search';
@@ -47,17 +49,48 @@ describe('Search component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('Calls to fetchPopular on load', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(component, div);
-    expect(fetchPopular).toHaveBeenCalledTimes(1);
-    expect(fetchPopular).toHaveBeenCalledWith();
+  describe('First mount: we must load the popular films', () => {
+    const middlewares = [thunk];
+    const mockStore = configureMockStore(middlewares);
+
+    const store = mockStore({
+      search: { movies: [], isLoading: false },
+      genres: { names: {}, isLoading: false },
+    });
+    const component = (
+      <Provider store={store}>
+        <MemoryRouter initialEntries={initialEntries}>
+          <Search />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    it('Calls to fetchPopular on load', () => {
+      const div = document.createElement('div');
+      ReactDOM.render(component, div);
+      expect(fetchPopular).toHaveBeenCalledTimes(1);
+      expect(fetchPopular).toHaveBeenLastCalledWith();
+    });
+
+    it('Calls to fetchGenres on load', () => {
+      const div = document.createElement('div');
+      ReactDOM.render(component, div);
+      expect(fetchGenres).toHaveBeenCalledTimes(1);
+      expect(fetchGenres).toHaveBeenLastCalledWith();
+    });
   });
 
-  it('Calls to fetchGenres on load', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(component, div);
-    expect(fetchGenres).toHaveBeenCalledTimes(1);
-    expect(fetchGenres).toHaveBeenCalledWith();
+  describe('Next mounts: we must mantain the current data', () => {
+    it(`Doesn't call to fetchPopular on load`, () => {
+      const div = document.createElement('div');
+      ReactDOM.render(component, div);
+      expect(fetchPopular).toHaveBeenCalledTimes(0);
+    });
+
+    it(`Doesn't call to fetchGenres on load`, () => {
+      const div = document.createElement('div');
+      ReactDOM.render(component, div);
+      expect(fetchGenres).toHaveBeenCalledTimes(0);
+    });
   });
 });
