@@ -33,24 +33,46 @@ describe('Detail Reducer', () => {
     expect(reducer(initialState, action)).toEqual(expectedState);
   });
 
-  it('Action: DETAIL_FETCH_SUCCESS', () => {
-    const action = {
-      type: DETAIL_FETCH_SUCCESS,
-      payload: {
-        response: {
-          data: movieInformation,
+  describe('Action: DETAIL_FETCH_SUCCESS', () => {
+    it('With data', () => {
+      const action = {
+        type: DETAIL_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: movieInformation,
+          },
         },
-      },
-    };
-    const initialState = {
-      isLoading: true,
-      movie: {},
-    };
-    const expectedState = {
-      isLoading: false,
-      movie: movieInformation,
-    };
-    expect(reducer(initialState, action)).toEqual(expectedState);
+      };
+      const initialState = {
+        isLoading: true,
+        movie: {},
+      };
+      const expectedState = {
+        isLoading: false,
+        movie: movieInformation,
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
+
+    it('Without data', () => {
+      const action = {
+        type: DETAIL_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: null,
+          },
+        },
+      };
+      const initialState = {
+        isLoading: true,
+        movie: movieInformation,
+      };
+      const expectedState = {
+        isLoading: false,
+        movie: {},
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
   });
 
   it('Action: DETAIL_FETCH_FAILURE', () => {

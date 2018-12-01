@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { mockComponent } from '../utils/testUtils';
+import { mockComponent } from '../../utils/testUtils';
 
 export class Table extends Component {
   render() {

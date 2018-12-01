@@ -37,14 +37,12 @@ export const fetchPopular = () => {
 };
 
 export const fetchSearch = query => {
-  if (!query) return { type: SEARCH_FETCH_FAILURE };
   const url = `${URL_API_THEMOVIEDB}/search/movie?include_adult=${URL_DEFAULT_INCLUDE_ADULT}&page=${URL_DEFAULT_PAGE}&language=${URL_DEFAULT_LANGUAGE}&query=${query}&api_key=${URL_API_KEY}`;
   const meta = { query };
   return doFetch(SEARCH_FETCH, url, meta);
 };
 
 export const fetchSearchById = id => {
-  if (!id) return { type: DETAIL_FETCH_FAILURE };
   const url = `${URL_API_THEMOVIEDB}/movie/${id}?language=${URL_DEFAULT_LANGUAGE}&api_key=${URL_API_KEY}`;
   const meta = { id };
   return doFetch(DETAIL_FETCH, url, meta);

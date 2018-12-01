@@ -20,14 +20,14 @@ export default function(state = defaultState, action) {
 
     case POPULAR_FETCH_SUCCESS:
     case SEARCH_FETCH_SUCCESS: {
-      if (!action.payload.response.data) return defaultState;
+      if (!action.payload.response.data.results) return defaultState;
       const { results } = action.payload.response.data;
       return { movies: results, isLoading: false };
     }
 
     case POPULAR_FETCH_FAILURE:
     case SEARCH_FETCH_FAILURE:
-      return { ...defaultState };
+      return defaultState;
 
     default:
       return state;

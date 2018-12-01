@@ -1,3 +1,5 @@
+import mockAxios from 'axios';
+
 import {
   POPULAR_FETCH_REQUEST,
   POPULAR_FETCH_SUCCESS,
@@ -68,91 +70,137 @@ describe('Action creators: ', () => {
     expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
     expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
   });
-});
 
-it('fetchSearchById', async () => {
-  // prepare
-  const id = '550';
-  const expected = [
-    {
-      type: DETAIL_FETCH_REQUEST,
-      payload: { meta: { id } },
-    },
-    {
-      type: DETAIL_FETCH_SUCCESS,
-      payload: { meta: { id }, response: {} },
-    },
-  ];
-
-  // mock the dispatch and getState functions from Redux thunk.
-  const dispatch = jest.fn();
-  const getState = jest.fn(() => {});
-
-  // execute
-  await fetchSearchById(id)(dispatch, getState);
-
-  // verify
-  expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
-  expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
-});
-
-it('fetchGenres', async () => {
-  // prepare
-  const expected = [
-    {
-      type: GENRES_FETCH_REQUEST,
-      payload: { meta: {} },
-    },
-    {
-      type: GENRES_FETCH_SUCCESS,
-      payload: { meta: {}, response: {} },
-    },
-  ];
-
-  // mock the dispatch and getState functions from Redux thunk.
-  const dispatch = jest.fn();
-  const getState = jest.fn(() => {});
-
-  // execute
-  await fetchGenres()(dispatch, getState);
-
-  // verify
-  expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
-  expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
-});
-
-describe('Auxiliar functions of actions creators: ', () => {
-  it('doFetch', async () => {
+  it('fetchSearchById', async () => {
     // prepare
-    const type = 'MY_TYPE';
-    const url = 'http://myUrl:1234';
+    const id = '550';
     const expected = [
       {
-        type: type + '/REQUEST',
-        payload: {
-          meta: {},
-        },
+        type: DETAIL_FETCH_REQUEST,
+        payload: { meta: { id } },
       },
       {
-        type: type + '/SUCCESS',
-        payload: {
-          meta: {},
-          response: {},
-        },
+        type: DETAIL_FETCH_SUCCESS,
+        payload: { meta: { id }, response: {} },
       },
     ];
 
     // mock the dispatch and getState functions from Redux thunk.
     const dispatch = jest.fn();
-    const getState = jest.fn(() => {
-      return {};
-    });
+    const getState = jest.fn(() => {});
 
     // execute
-    await doFetch(type, url)(dispatch, getState);
+    await fetchSearchById(id)(dispatch, getState);
 
     // verify
     expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
     expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
+  });
+
+  it('fetchGenres', async () => {
+    // prepare
+    const expected = [
+      {
+        type: GENRES_FETCH_REQUEST,
+        payload: { meta: {} },
+      },
+      {
+        type: GENRES_FETCH_SUCCESS,
+        payload: { meta: {}, response: {} },
+      },
+    ];
+
+    // mock the dispatch and getState functions from Redux thunk.
+    const dispatch = jest.fn();
+    const getState = jest.fn(() => {});
+
+    // execute
+    await fetchGenres()(dispatch, getState);
+
+    // verify
+    expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
+    expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
+  });
+});
+
+describe('Auxiliar functions of actions creators: ', () => {
+  describe('doFetch', () => {
+    it('Resolves', async () => {
+      // prepare
+      const type = 'MY_TYPE';
+      const url = 'http://myUrl:1234';
+      const results = ['result A', 'result B'];
+      mockAxios.get.mockImplementationOnce(() =>
+        Promise.resolve({
+          data: { results },
+        })
+      );
+
+      const expected = [
+        {
+          type: type + '/REQUEST',
+          payload: {
+            meta: {},
+          },
+        },
+        {
+          type: type + '/SUCCESS',
+          payload: {
+            meta: {},
+            response: { data: { results } },
+          },
+        },
+      ];
+
+      // mock the dispatch and getState functions from Redux thunk.
+      const dispatch = jest.fn();
+      const getState = jest.fn(() => {
+        return {};
+      });
+
+      // execute
+      await doFetch(type, url)(dispatch, getState);
+
+      // verify
+      expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
+      expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
+    });
+
+    it('Rejects', async () => {
+      // prepare
+      const type = 'MY_TYPE';
+      const url = 'http://myUrl:1234';
+      const error = new Error('The error');
+      mockAxios.get.mockImplementationOnce(() => Promise.reject(error));
+
+      const expected = [
+        {
+          type: type + '/REQUEST',
+          payload: {
+            meta: {},
+          },
+        },
+        {
+          type: type + '/FAILURE',
+          payload: {
+            meta: {},
+            error,
+          },
+        },
+      ];
+
+      // mock the dispatch and getState functions from Redux thunk.
+      const dispatch = jest.fn();
+      const getState = jest.fn(() => {
+        return {};
+      });
+
+      // execute
+      await doFetch(type, url)(dispatch, getState);
+
+      // verify
+      expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
+      expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
+    });
   });
 });

@@ -22,12 +22,12 @@ export default function(state = defaultState, action) {
           isLoading: false,
         };
       } else {
-        return { ...defaultState };
+        return defaultState;
       }
     }
 
     case DETAIL_FETCH_FAILURE:
-      return { ...defaultState };
+      return defaultState;
 
     default:
       return state;

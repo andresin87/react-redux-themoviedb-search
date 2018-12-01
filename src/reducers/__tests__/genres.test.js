@@ -36,26 +36,50 @@ describe('Genres Reducer', () => {
     expect(reducer(initialState, action)).toEqual(expectedState);
   });
 
-  it('Action: GENRES_FETCH_SUCCESS', () => {
-    const action = {
-      type: GENRES_FETCH_SUCCESS,
-      payload: {
-        response: {
-          data: {
-            genres: genresAsArray,
+  describe('Action: GENRES_FETCH_SUCCESS', () => {
+    it('With data', () => {
+      const action = {
+        type: GENRES_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: {
+              genres: genresAsArray,
+            },
           },
         },
-      },
-    };
-    const initialState = {
-      isLoading: true,
-      names: {},
-    };
-    const expectedState = {
-      isLoading: false,
-      names: genres,
-    };
-    expect(reducer(initialState, action)).toEqual(expectedState);
+      };
+      const initialState = {
+        isLoading: true,
+        names: {},
+      };
+      const expectedState = {
+        isLoading: false,
+        names: genres,
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
+
+    it('Without data', () => {
+      const action = {
+        type: GENRES_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: {
+              genres: null,
+            },
+          },
+        },
+      };
+      const initialState = {
+        isLoading: true,
+        names: genres,
+      };
+      const expectedState = {
+        isLoading: false,
+        names: {},
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
   });
 
   it('Action: GENRES_FETCH_REQUEST', () => {

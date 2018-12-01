@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchTable configuration Snapshot matchs 1`] = `
+Array [
+  Object {
+    "className": "SearchTableTitle",
+    "dataIndex": "title",
+    "key": "title",
+    "sorter": [Function],
+    "title": "Title",
+    "width": 450,
+  },
+  Object {
+    "align": "center",
+    "className": "SearchTableVoteAverage",
+    "dataIndex": "vote_average",
+    "key": "vote_average",
+    "sorter": [Function],
+    "title": "Vote average",
+    "width": 150,
+  },
+  Object {
+    "align": "center",
+    "className": "SearchTableVoteCount",
+    "dataIndex": "vote_count",
+    "key": "vote_count",
+    "sorter": [Function],
+    "title": "Vote count",
+    "width": 150,
+  },
+  Object {
+    "align": "center",
+    "className": "SearchTablePopularity",
+    "dataIndex": "popularity",
+    "key": "popularity",
+    "sorter": [Function],
+    "title": "Popularity",
+    "width": 150,
+  },
+  Object {
+    "align": "center",
+    "className": "SearchTableReleaseDate",
+    "dataIndex": "release_date",
+    "key": "release_date",
+    "render": [Function],
+    "sorter": [Function],
+    "title": "Release date",
+    "width": 150,
+  },
+  Object {
+    "className": "SearchTableGenres",
+    "dataIndex": "genre_ids",
+    "key": "genre_ids",
+    "render": [Function],
+    "title": "Genres",
+  },
+]
+`;

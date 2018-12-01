@@ -11,7 +11,6 @@ const defaultState = {
 
 const normalizeGenres = genresAsArray => {
   const genres = {};
-  if (!genresAsArray) return genres;
   genresAsArray.forEach(gender => {
     const { id, name } = gender;
     genres[id] = name;
@@ -25,13 +24,13 @@ export default function(state = defaultState, action) {
       return { ...defaultState, isLoading: true };
 
     case GENRES_FETCH_SUCCESS: {
-      if (!action.payload.response.data) return defaultState;
+      if (!action.payload.response.data.genres) return defaultState;
       const { genres } = action.payload.response.data;
       return { names: normalizeGenres(genres), isLoading: false };
     }
 
     case GENRES_FETCH_FAILURE:
-      return { ...defaultState };
+      return defaultState;
 
     default:
       return state;

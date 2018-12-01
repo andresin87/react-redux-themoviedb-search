@@ -30,6 +30,15 @@ describe('SearchTable component', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('Check the rowKey function', () => {
+    const tree = TestUtils.renderIntoDocument(component);
+    const table = TestUtils.findRenderedComponentWithType(tree, Table);
+    const id = 'myItemId';
+    const record = { id };
+    const { rowKey } = table.props;
+    expect(rowKey(record)).toEqual(id);
+  });
+
   it('Check that on row click launchs an action', () => {
     const tree = TestUtils.renderIntoDocument(component);
     const table = TestUtils.findRenderedComponentWithType(tree, Table);

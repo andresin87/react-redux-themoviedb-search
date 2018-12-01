@@ -45,26 +45,50 @@ describe('Search Reducer', () => {
     expect(reducer(initialState, action)).toEqual(expectedState);
   });
 
-  it('Action: POPULAR_FETCH_SUCCESS', () => {
-    const action = {
-      type: POPULAR_FETCH_SUCCESS,
-      payload: {
-        response: {
-          data: {
-            results: movies,
+  describe('Action: POPULAR_FETCH_SUCCESS', () => {
+    it('With data', () => {
+      const action = {
+        type: POPULAR_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: {
+              results: movies,
+            },
           },
         },
-      },
-    };
-    const initialState = {
-      isLoading: true,
-      movies: [],
-    };
-    const expectedState = {
-      isLoading: false,
-      movies,
-    };
-    expect(reducer(initialState, action)).toEqual(expectedState);
+      };
+      const initialState = {
+        isLoading: true,
+        movies: [],
+      };
+      const expectedState = {
+        isLoading: false,
+        movies,
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
+
+    it('Without data', () => {
+      const action = {
+        type: POPULAR_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: {
+              results: null,
+            },
+          },
+        },
+      };
+      const initialState = {
+        isLoading: true,
+        movies,
+      };
+      const expectedState = {
+        isLoading: false,
+        movies: [],
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
   });
 
   it('Action: POPULAR_FETCH_FAILURE', () => {
@@ -97,26 +121,50 @@ describe('Search Reducer', () => {
     expect(reducer(initialState, action)).toEqual(expectedState);
   });
 
-  it('Action: SEARCH_FETCH_SUCCESS', () => {
-    const action = {
-      type: SEARCH_FETCH_SUCCESS,
-      payload: {
-        response: {
-          data: {
-            results: movies,
+  describe('Action: SEARCH_FETCH_SUCCESS', () => {
+    it('With data', () => {
+      const action = {
+        type: SEARCH_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: {
+              results: movies,
+            },
           },
         },
-      },
-    };
-    const initialState = {
-      isLoading: true,
-      movies: [],
-    };
-    const expectedState = {
-      isLoading: false,
-      movies,
-    };
-    expect(reducer(initialState, action)).toEqual(expectedState);
+      };
+      const initialState = {
+        isLoading: true,
+        movies: [],
+      };
+      const expectedState = {
+        isLoading: false,
+        movies,
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
+
+    it('Without data', () => {
+      const action = {
+        type: SEARCH_FETCH_SUCCESS,
+        payload: {
+          response: {
+            data: {
+              results: null,
+            },
+          },
+        },
+      };
+      const initialState = {
+        isLoading: true,
+        movies,
+      };
+      const expectedState = {
+        isLoading: false,
+        movies: [],
+      };
+      expect(reducer(initialState, action)).toEqual(expectedState);
+    });
   });
 
   it('Action: SEARCH_FETCH_FAILURE', () => {
