@@ -5,7 +5,7 @@ import { mockComponent } from '../../utils/testUtils';
 
 import App from '../App';
 
-jest.mock('../Search', () => {
+jest.mock('../Search/Search', () => {
   return props => mockComponent('Search', props);
 });
 

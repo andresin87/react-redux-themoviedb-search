@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Item budget 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing budget Snapshot budget: Item budget 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -17,11 +17,11 @@ exports[`Item budget 1`] = `
     : 
   </strong>
   63,000,000$
-</mocked>
+</code>
 `;
 
-exports[`Item genres 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing genres Snapshot genres: Item genres 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -37,11 +37,11 @@ exports[`Item genres 1`] = `
     : 
   </strong>
    Drama
-</mocked>
+</code>
 `;
 
-exports[`Item overview 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing overview Snapshot overview: Item overview 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -57,11 +57,11 @@ exports[`Item overview 1`] = `
     : 
   </strong>
   A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.
-</mocked>
+</code>
 `;
 
-exports[`Item popularity 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing popularity Snapshot popularity: Item popularity 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -77,11 +77,11 @@ exports[`Item popularity 1`] = `
     : 
   </strong>
   38.513
-</mocked>
+</code>
 `;
 
-exports[`Item production_companies 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing production_companies Snapshot production_companies: Item production_companies 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -97,11 +97,11 @@ exports[`Item production_companies 1`] = `
     : 
   </strong>
    Regency Enterprises, Fox 2000 Pictures, Taurus Film, Atman Entertainment, Knickerbocker Films, 20th Century Fox, The Linson Company
-</mocked>
+</code>
 `;
 
-exports[`Item production_countries 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing production_countries Snapshot production_countries: Item production_countries 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -117,11 +117,11 @@ exports[`Item production_countries 1`] = `
     : 
   </strong>
    Germany, United States of America
-</mocked>
+</code>
 `;
 
-exports[`Item release_date 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing release_date Snapshot release_date: Item release_date 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -137,11 +137,11 @@ exports[`Item release_date 1`] = `
     : 
   </strong>
   15/10/1999
-</mocked>
+</code>
 `;
 
-exports[`Item runtime 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing runtime Snapshot runtime: Item runtime 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -157,11 +157,11 @@ exports[`Item runtime 1`] = `
     : 
   </strong>
   139 min.
-</mocked>
+</code>
 `;
 
-exports[`Item spoken_languages 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing spoken_languages Snapshot spoken_languages: Item spoken_languages 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -177,11 +177,11 @@ exports[`Item spoken_languages 1`] = `
     : 
   </strong>
    English
-</mocked>
+</code>
 `;
 
-exports[`Item status 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing status Snapshot status: Item status 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -197,11 +197,11 @@ exports[`Item status 1`] = `
     : 
   </strong>
   Released
-</mocked>
+</code>
 `;
 
-exports[`Item vote_average 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing vote_average Snapshot vote_average: Item vote_average 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -217,11 +217,11 @@ exports[`Item vote_average 1`] = `
     : 
   </strong>
   8.4
-</mocked>
+</code>
 `;
 
-exports[`Item vote_count 1`] = `
-<mocked
+exports[`DetailInfoItem component Processing vote_count Snapshot vote_count: Item vote_count 1`] = `
+<code
   name="ListItem"
   props={Object {}}
 >
@@ -237,5 +237,5 @@ exports[`Item vote_count 1`] = `
     : 
   </strong>
   13,653
-</mocked>
+</code>
 `;

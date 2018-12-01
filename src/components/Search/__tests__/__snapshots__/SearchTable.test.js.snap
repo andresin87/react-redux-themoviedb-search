@@ -4,7 +4,7 @@ exports[`SearchTable component Snapshot matchs 1`] = `
 <div
   className="SearchTable"
 >
-  <mocked
+  <code
     name="Antd Table"
     props={
       Object {

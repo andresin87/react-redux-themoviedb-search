@@ -2,13 +2,13 @@
 
 exports[`Search component Snapshot matchs 1`] = `
 Array [
-  <mocked
+  <code
     name="SearchBar"
     props={Object {}}
-/>,
-  <mocked
+  />,
+  <code
     name="SearchTable"
     props={Object {}}
-/>,
+  />,
 ]
 `;

@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 import configureStore from '../config/store';
-import Search from './Search';
-import Detail from './Detail';
+import Search from './Search/Search';
+import Detail from './Detail/Detail';
 
 const store = configureStore();
 

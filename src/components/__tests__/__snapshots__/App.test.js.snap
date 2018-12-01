@@ -17,7 +17,7 @@ exports[`App component Snapshot matchs 1`] = `
     className="App-body"
   >
     <div>
-      <mocked
+      <code
         name="Search"
         props={
           Object {

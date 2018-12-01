@@ -33,7 +33,7 @@ exports[`Detail component Snapshot matchs 1`] = `
     >
       Home
     </a>
-    <mocked
+    <code
       name="List"
       props={
         Object {
@@ -176,7 +176,7 @@ exports[`Detail component Snapshot matchs 1`] = `
           "header": <DetailInfoHeader
             tagline="Mischief. Mayhem. Soap."
             title="Fight Club"
-        />,
+          />,
           "renderItem": [Function],
           "size": "medium",
         }
