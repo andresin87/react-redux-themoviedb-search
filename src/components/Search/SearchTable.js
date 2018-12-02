@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { Table } from 'antd';
 
 import './SearchTable.css';
-import { getColumns } from './searchTableConfiguration';
-import { selectorSearch } from '../../reducers/search';
-import { selectorGenres } from '../../reducers/genres';
+import { getColumns } from './searchTableHelper';
+import { selectorSearch } from '../../reducers';
+import { selectorGenres } from '../../reducers';
 
 class SearchTable extends PureComponent {
   static contextTypes = {

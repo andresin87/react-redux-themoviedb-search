@@ -33,5 +33,3 @@ export default function(state = defaultState, action) {
       return state;
   }
 }
-
-export const selectorSearch = state => state.search;

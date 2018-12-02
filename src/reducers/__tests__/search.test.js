@@ -6,7 +6,7 @@ import {
   SEARCH_FETCH_SUCCESS,
   SEARCH_FETCH_FAILURE,
 } from '../../actions';
-import reducer, { selectorSearch } from '../search';
+import reducer from '../search';
 
 describe('Search Reducer', () => {
   const movies = [
@@ -180,13 +180,5 @@ describe('Search Reducer', () => {
       movies: [],
     };
     expect(reducer(initialState, action)).toEqual(expectedState);
-  });
-
-  it('Selector: selectorSearch', () => {
-    const search = { a: 1, b: 2 };
-    const state = {
-      search,
-    };
-    expect(selectorSearch(state)).toEqual(search);
   });
 });

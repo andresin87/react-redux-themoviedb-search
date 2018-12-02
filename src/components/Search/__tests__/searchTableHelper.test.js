@@ -1,4 +1,4 @@
-import { getColumns } from '../searchTableConfiguration';
+import { getColumns } from '../searchTableHelper';
 
 describe('SearchTable configuration', () => {
   const genresNames = {

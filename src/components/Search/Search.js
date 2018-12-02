@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import SearchBar from './SearchBar';
 import SearchTable from './SearchTable';
-import { selectorSearch } from '../../reducers/search';
-import { selectorGenres } from '../../reducers/genres';
+import { selectorSearch } from '../../reducers';
+import { selectorGenres } from '../../reducers';
 import { fetchPopular, fetchGenres } from '../../actions';
 
 class Search extends PureComponent {

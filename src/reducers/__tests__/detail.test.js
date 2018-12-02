@@ -3,7 +3,7 @@ import {
   DETAIL_FETCH_SUCCESS,
   DETAIL_FETCH_FAILURE,
 } from '../../actions';
-import reducer, { selectorDetail } from '../detail';
+import reducer from '../detail';
 
 describe('Detail Reducer', () => {
   const movieInformation = { id: '550', name: 'Fight Club' };
@@ -88,13 +88,5 @@ describe('Detail Reducer', () => {
       movie: {},
     };
     expect(reducer(initialState, action)).toEqual(expectedState);
-  });
-
-  it('Selector: selectorDetail', () => {
-    const detail = { a: 1, b: 2 };
-    const state = {
-      detail,
-    };
-    expect(selectorDetail(state)).toEqual(detail);
   });
 });
