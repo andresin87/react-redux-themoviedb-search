@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`DetailInfo component Check the rowKey function 1`] = `
+<DetailInfoItem>
+  Object {
+    "key": "budget",
+    "label": "Budget",
+    "type": "currency",
+    "value": 63000000,
+  }
+</DetailInfoItem>
+`;
+
 exports[`DetailInfo component Snapshot matchs 1`] = `
 Array [
   <a

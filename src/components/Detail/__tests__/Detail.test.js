@@ -48,4 +48,52 @@ describe('Detail component', () => {
     expect(fetchSearchById).toHaveBeenCalledTimes(1);
     expect(fetchSearchById).toHaveBeenCalledWith(id);
   });
+
+  describe(`Doesn't call to fetchSearchById`, () => {
+    it('No location', () => {
+      const location = null;
+      const component = (
+        <Provider store={store}>
+          <MemoryRouter initialEntries={initialEntries}>
+            <Detail location={location} />
+          </MemoryRouter>
+        </Provider>
+      );
+
+      const div = document.createElement('div');
+      ReactDOM.render(component, div);
+      expect(fetchSearchById).not.toBeCalled();
+    });
+
+    it('No pathname', () => {
+      const location = { pathname: null };
+      const component = (
+        <Provider store={store}>
+          <MemoryRouter initialEntries={initialEntries}>
+            <Detail location={location} />
+          </MemoryRouter>
+        </Provider>
+      );
+
+      const div = document.createElement('div');
+      ReactDOM.render(component, div);
+      expect(fetchSearchById).not.toBeCalled();
+    });
+
+    it('No id', () => {
+      const initialEntries = ['/', `/detail/`];
+      const location = { pathname: '/detail/' };
+      const component = (
+        <Provider store={store}>
+          <MemoryRouter initialEntries={initialEntries}>
+            <Detail location={location} />
+          </MemoryRouter>
+        </Provider>
+      );
+
+      const div = document.createElement('div');
+      ReactDOM.render(component, div);
+      expect(fetchSearchById).not.toBeCalled();
+    });
+  });
 });

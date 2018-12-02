@@ -15,6 +15,7 @@ class Detail extends PureComponent {
       if (id) fetchSearchById(id);
     }
   }
+
   render() {
     return (
       <div className="Detail">

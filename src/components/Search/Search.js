@@ -21,6 +21,7 @@ class Search extends PureComponent {
     if (!isLoadingGenres && Object.keys(genresNames).length === 0)
       fetchGenres();
   }
+
   render() {
     return (
       <Fragment>

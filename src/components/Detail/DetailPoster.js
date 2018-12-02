@@ -11,7 +11,6 @@ class DetailPoster extends PureComponent {
         movie: { title, poster_path },
       },
     } = this.props;
-    if (!poster_path) return null;
     return (
       <img
         alt={title}

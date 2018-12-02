@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import './DetailInfoHeader.css';
 
-class DetailInfoHeader extends PureComponent {
-  getTagline = tagline => {
-    if (!tagline || tagline === '') return null;
-    else {
-      return <h4 className="DetailInfoHeaderTagline"> — {tagline}</h4>;
-    }
-  };
+const getTagline = tagline => {
+  if (!tagline || tagline === '') return null;
+  else {
+    return <h4 className="DetailInfoHeaderTagline"> — {tagline}</h4>;
+  }
+};
 
+class DetailInfoHeader extends PureComponent {
   render() {
     const { title, tagline } = this.props;
     return (
@@ -18,7 +18,7 @@ class DetailInfoHeader extends PureComponent {
         <h2>
           <strong>{title}</strong>
         </h2>
-        {this.getTagline(tagline)}
+        {getTagline(tagline)}
       </div>
     );
   }
