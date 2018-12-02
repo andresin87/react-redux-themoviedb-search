@@ -20,19 +20,10 @@ exports[`Detail component Snapshot matchs 1`] = `
   <div
     className="DetailInfoWrapper"
   >
-    <a
-      aria-current="page"
-      className="DetailInfoHomeButton active"
-      href="/"
-      onClick={[Function]}
-      style={
-        Object {
-          "color": "white",
-        }
-      }
-    >
-      Home
-    </a>
+    <code
+      name="DetailInfoHomeButton"
+      props={Object {}}
+    />
     <code
       name="List"
       props={
@@ -173,7 +164,7 @@ exports[`Detail component Snapshot matchs 1`] = `
               "value": 13618,
             },
           ],
-          "header": <DetailInfoHeader
+          "header": <Unknown
             tagline="Mischief. Mayhem. Soap."
             title="Fight Club"
           />,

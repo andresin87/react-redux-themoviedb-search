@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { mockComponent } from '../../../utils/testUtils';
 
 import Detail from '../Detail';
 import store from '../../../config/mockStore';
 
 import { fetchSearchById } from '../../../actions';
+
+jest.mock('../DetailInfoItem', () => {
+  return props => mockComponent('DetailInfoItem', props);
+});
+jest.mock('../DetailInfoHeader', () => {
+  return props => mockComponent('DetailInfoHeader', props);
+});
+jest.mock('../DetailInfoHomeButton', () => {
+  return props => mockComponent('DetailInfoHomeButton', props);
+});
 
 jest.mock('../../../actions');
 

@@ -5,19 +5,12 @@ import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { mockComponent } from '../../../utils/testUtils';
 
 import Search from '../Search';
 import store from '../../../config/mockStore';
 import { fetchPopular, fetchGenres } from '../../../actions';
 
 jest.mock('../../../actions');
-jest.mock('../SearchBar', () => {
-  return props => mockComponent('SearchBar', props);
-});
-jest.mock('../SearchTable', () => {
-  return props => mockComponent('SearchTable', props);
-});
 
 describe('Search component', () => {
   const initialEntries = ['/'];
