@@ -29,7 +29,7 @@ describe('DetailInfo component', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('Check the rowKey function', () => {
+  it('Check the renderItem function', () => {
     const item = {
       key: 'budget',
       label: 'Budget',

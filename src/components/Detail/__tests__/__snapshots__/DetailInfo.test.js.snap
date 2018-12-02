@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DetailInfo component Check the rowKey function 1`] = `
+exports[`DetailInfo component Check the renderItem function 1`] = `
 <DetailInfoItem>
   Object {
     "key": "budget",
