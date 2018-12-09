@@ -8,8 +8,13 @@ import { List } from 'antd';
 
 import DetailInfo from '../DetailInfo';
 import store from '../../../config/mockStore';
+import state from '../../../config/mockState.js';
+import { selectorDetail } from '../../../reducers';
+
+jest.mock('../../../reducers');
 
 describe('DetailInfo component', () => {
+  const mockDetail = state.detail;
   const component = (
     <Provider store={store}>
       <Router>
@@ -17,6 +22,14 @@ describe('DetailInfo component', () => {
       </Router>
     </Provider>
   );
+
+  beforeEach(() => {
+    selectorDetail.mockReturnValue(mockDetail);
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it('Renders without crashing', () => {
     const div = document.createElement('div');

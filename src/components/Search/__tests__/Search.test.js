@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 
 import Search from '../Search';
 import store from '../../../config/mockStore';
+import state from '../../../config/mockState.js';
 import { fetchPopular, fetchGenres } from '../../../actions';
+import { selectorSearch, selectorGenres } from '../../../reducers';
 
 jest.mock('../../../actions');
+jest.mock('../../../reducers');
 
 describe('Search component', () => {
+  const mockSearch = state.search;
+  const mockGenres = state.genres;
   const initialEntries = ['/'];
   const component = (
     <Provider store={store}>
@@ -25,6 +28,8 @@ describe('Search component', () => {
   beforeEach(() => {
     fetchPopular.mockReturnValue({ type: 'fetchPopular' });
     fetchGenres.mockReturnValue({ type: 'fetchGenres' });
+    selectorSearch.mockReturnValue(mockSearch);
+    selectorGenres.mockReturnValue(mockGenres);
   });
 
   afterEach(() => {
@@ -43,20 +48,13 @@ describe('Search component', () => {
   });
 
   describe('First mount: we must load the popular films', () => {
-    const middlewares = [thunk];
-    const mockStore = configureMockStore(middlewares);
+    const mockSearch = { movies: [], isLoading: false };
+    const mockGenres = { names: {}, isLoading: false };
 
-    const store = mockStore({
-      search: { movies: [], isLoading: false },
-      genres: { names: {}, isLoading: false },
+    beforeEach(() => {
+      selectorSearch.mockReturnValue(mockSearch);
+      selectorGenres.mockReturnValue(mockGenres);
     });
-    const component = (
-      <Provider store={store}>
-        <MemoryRouter initialEntries={initialEntries}>
-          <Search />
-        </MemoryRouter>
-      </Provider>
-    );
 
     it('Calls to fetchPopular on load', () => {
       const div = document.createElement('div');

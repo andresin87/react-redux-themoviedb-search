@@ -7,9 +7,11 @@ import { mockComponent } from '../../../utils/testUtils';
 
 import Detail from '../Detail';
 import store from '../../../config/mockStore';
-
+import state from '../../../config/mockState.js';
 import { fetchSearchById } from '../../../actions';
+import { selectorDetail } from '../../../reducers';
 
+jest.mock('../../../reducers');
 jest.mock('../DetailInfoItem', () => {
   return props => mockComponent('DetailInfoItem', props);
 });
@@ -23,6 +25,7 @@ jest.mock('../DetailInfoHomeButton', () => {
 jest.mock('../../../actions');
 
 describe('Detail component', () => {
+  const mockDetail = state.detail;
   const id = '550';
   const initialEntries = ['/', `/detail/${id}`];
   const location = { pathname: id };
@@ -36,6 +39,7 @@ describe('Detail component', () => {
 
   beforeEach(() => {
     fetchSearchById.mockReturnValue({ type: 'fetchSearchById' });
+    selectorDetail.mockReturnValue(mockDetail);
   });
 
   afterEach(() => {
