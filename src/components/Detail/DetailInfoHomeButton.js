@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './DetailInfoHomeButton.css';
+import styles from './DetailInfoHomeButton.module.css';
 
 class DetailInfoHomeButton extends PureComponent {
   render() {
     return (
       <NavLink
         to="/"
-        className="DetailInfoHomeButton"
+        className={styles['DetailInfoHomeButton']}
         style={{ color: 'white' }}
       >
         Home

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Input } from 'antd';
 
-import './SearchBar.css';
+import styles from './SearchBar.module.css';
 import { fetchSearch } from '../../actions';
 
 const Search = Input.Search;
@@ -12,7 +12,7 @@ class SearchBar extends PureComponent {
   render() {
     const { fetchSearch } = this.props;
     return (
-      <div className="SearchBar">
+      <div className={styles['SearchBar']}>
         <Search
           placeholder="Search for a film..."
           enterButton="Search"

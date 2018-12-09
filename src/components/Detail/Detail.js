@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import './Detail.css';
+import styles from './Detail.module.css';
 import { fetchSearchById } from '../../actions';
 import DetailPoster from './DetailPoster';
 import DetailInfo from './DetailInfo';
@@ -18,11 +18,11 @@ class Detail extends PureComponent {
 
   render() {
     return (
-      <div className="Detail">
-        <div className="DetailPosterWrapper">
+      <div className={styles['Detail']}>
+        <div className={styles['DetailPosterWrapper']}>
           <DetailPoster />
         </div>
-        <div className="DetailInfoWrapper">
+        <div className={styles['DetailInfoWrapper']}>
           <DetailInfo />
         </div>
       </div>

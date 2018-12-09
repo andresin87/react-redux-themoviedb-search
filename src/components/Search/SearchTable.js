@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Table } from 'antd';
 
-import './SearchTable.css';
+import styles from './SearchTable.module.css';
 import { getColumns } from './searchTableHelper';
 import { selectorSearch } from '../../reducers';
 import { selectorGenres } from '../../reducers';
@@ -31,7 +31,7 @@ class SearchTable extends PureComponent {
     const columns = getColumns(genresNames);
 
     return (
-      <div className="SearchTable">
+      <div className={styles['SearchTable']}>
         <Table
           loading={isLoadingMovies || isLoadingGenres}
           dataSource={movies}

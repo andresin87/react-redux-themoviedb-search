@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import './DetailInfoHeader.css';
+import styles from './DetailInfoHeader.module.css';
 
 const getTagline = tagline => {
   if (!tagline || tagline === '') return null;
@@ -14,7 +14,7 @@ class DetailInfoHeader extends PureComponent {
   render() {
     const { title, tagline } = this.props;
     return (
-      <div className="DetailInfoHeader">
+      <div className={styles['DetailInfoHeader']}>
         <h2>
           <strong>{title}</strong>
         </h2>
