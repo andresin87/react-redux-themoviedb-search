@@ -1,7 +1,14 @@
 /* globals cy */
 describe('Search for a film', () => {
-  const idOfFilm = 550;
-  const nameOfFilm = 'Fight Club';
+  const idOfMovie = 550;
+  const nameOfMovie = 'Fight Club';
+
+  before(() => {
+    cy.server();
+    cy.route('/3/movie/popular*').as('getPopular');
+    cy.route('/3/genre/movie/list*').as('getGender');
+    cy.route(`/3/movie/${idOfMovie}?*`).as('getMovie');
+  });
 
   beforeEach(() => {
     return cy.visit('/');
@@ -9,11 +16,16 @@ describe('Search for a film', () => {
 
   it('Search the Fight Club', () => {
     cy.get('.ant-input')
-      .type(nameOfFilm)
+      .type(nameOfMovie)
       .get('.ant-btn')
       .click()
-      .get(`[data-row-key="${idOfFilm}"] > .SearchTableTitle`)
-      .click()
-      .snapshot(nameOfFilm);
+      .get(`[data-row-key="${idOfMovie}"] > .SearchTableTitle`)
+      .click();
+
+    cy.wait('@getMovie');
+
+    cy.get('img').should('exist');
+    cy.get('h2 > strong').contains(nameOfMovie);
+    cy.get('.DetailInfoHeaderTagline').contains('Mischief. Mayhem. Soap.');
   });
 });
