@@ -27,5 +27,8 @@ describe('Search for a film', () => {
     cy.get('img').should('exist');
     cy.get('h2 > strong').contains(nameOfMovie);
     cy.get('.DetailInfoHeaderTagline').contains('Mischief. Mayhem. Soap.');
+    cy.get('[class^="DetailInfoHomeButton"]')
+      .contains('Home')
+      .click();
   });
 });
